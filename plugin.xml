@@ -23,6 +23,11 @@
             </feature>
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/*">
+          <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+          <uses-permission android:name="android.permission.WAKE_LOCK" />
+        </config-file>
+        
        
         
         <source-file src="src/android/WakeupPlugin.java" target-dir="src/org/nypr/cordova/wakeupplugin/" />
