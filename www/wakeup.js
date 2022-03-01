@@ -15,13 +15,3 @@ Wakeup.prototype.snooze = function(success, error, options) {
 
 module.exports = new Wakeup();
 
-
-// Installation constructor that binds Wakeup to window
-WakeupPlugin.install = function() {
-  if (!window.plugins) {
-    window.plugins = {};
-  }
-  window.plugins.wakeupPlugin = new WakeupPlugin();
-  return window.plugins.wakeupPlugin;
-};
-cordova.addConstructor(WakeupPlugin.install);
