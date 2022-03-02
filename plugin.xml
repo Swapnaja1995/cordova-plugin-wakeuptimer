@@ -11,7 +11,7 @@
     <repo>git@git.wnyc.net:mobile/cordova/cordova-plugin-wakeuptimer.git</repo>
 
     <js-module src="www/wakeup.js" name="Wakeup">
-      <clobbers target="wakeuptimer"/>
+      <clobbers target="cordova.plugins.wakeuptimer"/>
     </js-module>
 
     <!-- android -->
