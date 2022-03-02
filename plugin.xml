@@ -22,6 +22,20 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+          <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+          <uses-permission android:name="android.permission.WAKE_LOCK" />
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:name="org.nypr.cordova.wakeupplugin.WakeupReceiver" android:exported="true"/>
+            <receiver android:name="org.nypr.cordova.wakeupplugin.WakeupBootReceiver"  android:exported="true">  
+              <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+              </intent-filter>
+            </receiver>
+        </config-file>
+        
 
         
         <source-file src="src/android/WakeupPlugin.java" target-dir="src/org/nypr/cordova/wakeupplugin/" />
